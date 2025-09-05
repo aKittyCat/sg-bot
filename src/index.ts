@@ -24,3 +24,8 @@ if (DISCORD_BOT_TOKEN) {
     "Error: DISCORD_BOT_TOKEN environment variable not set. Please set it before running the bot."
   );
 }
+
+if (process.env.FORCE_FIRST_RUN === '1') {
+  console.log('[GUID] Force clearing lastProcessedGuid');
+  lastProcessedGuid = null;
+}
